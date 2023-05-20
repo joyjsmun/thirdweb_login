@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { coinbaseWallet, localWallet, magicLink, metamaskWallet, paperWallet, safeWallet, smartWallet, ThirdwebProvider, walletConnect } from "@thirdweb-dev/react";
 import { BaseGoerli,PolygonZkevmTestnet } from "@thirdweb-dev/chains";
 
 import "../styles/globals.css";
@@ -12,7 +12,19 @@ const activeChain = "polygon"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider activeChain={BaseGoerli} supportedChains={[BaseGoerli,PolygonZkevmTestnet]}>
+    <ThirdwebProvider activeChain={BaseGoerli} 
+    supportedChains={[BaseGoerli,PolygonZkevmTestnet]} 
+    supportedWallets={[
+      metamaskWallet(),
+      coinbaseWallet(),
+      walletConnect(),
+      safeWallet(),
+      paperWallet({clientId:"",}),
+      magicLink({apiKey:""}),
+  smartWallet({factoryAddress:"",thirdwebApiKey:"",gasless:true,personalWallets:[metamaskWallet(),localWallet()]}
+  ),localWallet()
+
+]}>
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
