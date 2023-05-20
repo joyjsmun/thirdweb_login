@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <ConnectWallet />
+        <ConnectWallet theme="dark" btnTitle="Login SplashX" className={styles.customWallet}/>
       </main>
     </div>
   );

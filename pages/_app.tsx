@@ -13,6 +13,7 @@ const activeChain = "polygon"
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider activeChain={BaseGoerli} 
+    //if we support only one chain then "supportedChains"
     supportedChains={[BaseGoerli,PolygonZkevmTestnet]} 
     supportedWallets={[
       metamaskWallet(),

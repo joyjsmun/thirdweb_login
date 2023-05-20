@@ -111,9 +111,18 @@
 .footer {
   border-color: #222;
 }
+
 .code {
   background: #111;
 }
+
 .logo img {
   filter: invert(1);
+}
+
+.customWallet {
+  background-color: #0ea5e9 !important;
+  border-radius: 50px !important;
+  font-weight: bold !important;
+  color: white !important;
 }
